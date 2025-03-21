@@ -1,3 +1,4 @@
 # Directories
 .terraform/
 .idea
+.terraform.lock.hcl
