@@ -24,3 +24,12 @@ resource "aws_s3_bucket" "devops" {
     Environment = "Dev"
   }
 }
+
+resource "aws_s3_bucket" "devops1" {
+  bucket = "test1234abc123d123"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev2"
+  }
+}
