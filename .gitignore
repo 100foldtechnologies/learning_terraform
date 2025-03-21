@@ -2,4 +2,6 @@
 .terraform/
 .idea
 .terraform.lock.hcl
+
+# Ignore macOS-specific files
 .DS_Store
