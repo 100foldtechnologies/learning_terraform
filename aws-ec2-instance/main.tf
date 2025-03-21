@@ -6,12 +6,21 @@ provider "aws" {
   region = "${var.aws_region}"
 }
 
-resource "aws_instance" "ubuntu" {
-  ami           = "${var.ami_id}"
-  instance_type = "${var.instance_type}"
-  availability_zone = "${var.aws_region}a"
+terraform {
+  backend "s3" {
+    bucket = "devops123abctech"
+    key = "devops/terraform.tfstate"
+    region = "us-east-1"
+    encrypt = true
+  }
+}
 
-  tags {
-    Name = "${var.name}"
+
+resource "aws_s3_bucket" "devops" {
+  bucket = "test1234abc123c12"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
   }
 }
